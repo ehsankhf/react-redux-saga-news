@@ -1,6 +1,13 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+
 import logo from '../../logo.svg';
+
 import './Main.css';
+
+const onClickHandler = e => {
+  window.open('https://reactjs.org');
+};
 
 function Main() {
   return (
@@ -10,14 +17,7 @@ function Main() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button onClick={onClickHandler}>Learn React</Button>
       </header>
     </div>
   );
