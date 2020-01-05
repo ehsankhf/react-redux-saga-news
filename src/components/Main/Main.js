@@ -1,26 +1,15 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-
-import logo from '../../logo.svg';
+import {Container} from 'react-bootstrap';
 
 import './Main.css';
-
-const onClickHandler = e => {
-  window.open('https://reactjs.org');
-};
+import Navigation from "../Navigation/Navigation";
 
 function Main() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button onClick={onClickHandler}>Learn React</Button>
-      </header>
-    </div>
-  );
+    return (
+        <Container className="Main">
+          <Navigation />
+        </Container>
+    );
 }
 
 export default Main;
