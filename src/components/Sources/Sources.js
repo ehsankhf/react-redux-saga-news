@@ -3,10 +3,11 @@ import {Container} from 'react-bootstrap';
 import {getSources} from "../../state/actionCreators";
 import {connect} from "react-redux";
 import Source from "../Source/Source";
+import Loader from "../../shared/Loader/Loader";
 
-const Sources = ({sourcesList, getSources}) => {
+const Sources = ({sourcesList, getSources, loading}) => {
     useEffect(() => {
-        if(!sourcesList || !sourcesList.length) {
+        if (!sourcesList || !sourcesList.length) {
             getSources()
         }
     }, []);
@@ -17,7 +18,7 @@ const Sources = ({sourcesList, getSources}) => {
         );
     };
 
-    return (
+    return loading ? <Loader/> : (
         <Container className='sources'>
             {renderSources()}
         </Container>
@@ -28,8 +29,8 @@ const mapDispatchToProps = {
     getSources
 };
 
-function mapStateToProps({sourcesList}) {
-    return {sourcesList}
+function mapStateToProps({sourcesList, loading}) {
+    return {sourcesList, loading}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sources);

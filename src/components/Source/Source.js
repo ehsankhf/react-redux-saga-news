@@ -1,14 +1,8 @@
 import React from 'react';
-import {Row, Card} from 'react-bootstrap';
+import {Alert} from 'react-bootstrap';
 
-export default (props) => {
+export default React.memo((props) => {
     return (
-        <Card className='source'>
-            <Card.Body>
-                <Card.Title>
-                    {props.name}
-                </Card.Title>
-            </Card.Body>
-        </Card>
+        <Alert key={props.id} variant='success'>{props.name}</Alert>
     );
-}
+});

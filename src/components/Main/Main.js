@@ -1,10 +1,10 @@
 import React from 'react';
 import {Container} from 'react-bootstrap';
-
-import './Main.css';
-import Navigation from "../Navigation/Navigation";
-
 import {Route, Switch} from "react-router-dom";
+
+import './Main.scss';
+
+import Navigation from "../Navigation/Navigation";
 import NewsArticles from "../NewsArticles/NewsArticles";
 import Sources from "../Sources/Sources";
 

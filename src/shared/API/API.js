@@ -11,14 +11,17 @@ export default class API {
             apiKey: config.apiKey,
             language: 'en',
             q: '*',
-            sources
+            sources: sources === '*' ? undefined : sources
         })}`);
         const {articles} = await response.json();
         return articles
     }
 
     static async getSourcesList() {
-        const response = await fetch(`${baseUrl}/v2/sources?${qs.stringify({apiKey: config.apiKey})}`);
+        const response = await fetch(`${baseUrl}/v2/sources?${qs.stringify({
+            apiKey: config.apiKey,
+            language: 'en'
+        })}`);
 
         const {sources} = await response.json();
         return sources

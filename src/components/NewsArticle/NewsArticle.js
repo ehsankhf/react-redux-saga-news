@@ -1,17 +1,21 @@
 import React from 'react';
-import {Card} from 'react-bootstrap';
+import {Card, Col, Row} from 'react-bootstrap';
 
-export default (props) => {
+export default React.memo((props) => {
     return (
-        <Card className='news-article'>
-            <Card.Body>
-                <Card.Title>
-                    {props.title}
-                </Card.Title>
-                <Card.Text>
-                    {props.description}
-                </Card.Text>
-            </Card.Body>
-        </Card>
+        <Row>
+            <Col>
+                <Card className='news-article'>
+                    <Card.Body>
+                        <Card.Title>
+                            {props.title}
+                        </Card.Title>
+                        <Card.Text>
+                            {props.description}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+        </Row>
     );
-}
+});

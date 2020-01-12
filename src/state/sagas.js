@@ -1,9 +1,9 @@
 import {put, takeLatest, all, call} from 'redux-saga/effects';
 import API from "../shared/API/API";
 
-function* fetchArticles(payload) {
+function* fetchArticles({payload: {sources}}) {
     yield put({type: "LOADING"});
-    const articles = yield call(API.getArticles, payload.sources);
+    const articles = yield call(API.getArticles, sources);
     yield put({type: "RECEIVED_NEWS", articles});
     yield put({type: "LOADED"});
 }
