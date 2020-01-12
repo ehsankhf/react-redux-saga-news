@@ -1,10 +1,17 @@
 import React from 'react';
-import {Container} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 
 export default (props) => {
     return (
-        <Container>
-            NewsArticle
-        </Container>
+        <Card className='news-article'>
+            <Card.Body>
+                <Card.Title>
+                    {props.title}
+                </Card.Title>
+                <Card.Text>
+                    {props.description}
+                </Card.Text>
+            </Card.Body>
+        </Card>
     );
 }

@@ -7,6 +7,6 @@ describe('NewsArticle', () => {
     it('should render successfully', () => {
         const component = shallow(<NewsArticle/>);
 
-        expect(component.find('Container').length).toBe(1);
+        expect(component.find('.news-article').length).toBe(1);
     });
 });

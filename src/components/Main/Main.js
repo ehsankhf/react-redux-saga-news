@@ -12,7 +12,7 @@ function renderRoute() {
     return (
         <Switch>
             <Route exact path="/">
-                <NewsArticles/>
+                <NewsArticles type='head-news'/>
             </Route>
             <Route path="/articles">
                 <NewsArticles/>
